@@ -56,7 +56,7 @@ namespace customidle
             Chat sendEmote = new Chat();
 
             //There is most definitely a nicer way of handling this.
-            if (emoteCooldown && !IsMoving() && !InCombat && !IsJumping && !IsBetweenAreas)
+            if (emoteCooldown && CanPerformEmote())
             {
                 if (EmoteList.IsValidEmote(Emote) && !IsWeaponUnsheathed() && this.Configuration.Unsheathed)
                 {
@@ -89,7 +89,12 @@ namespace customidle
         
         private bool emoteCooldown = true; // emoteCooldown makes it so that it only sends the command once until you move again, otherwise it would spam send the command.
 
-        public static bool IsWeaponUnsheathed()
+        private bool CanPerformEmote()
+        {
+            return !IsMoving() && !InCombat && !IsJumping && !IsBetweenAreas;
+        }
+
+        private bool IsWeaponUnsheathed()
         {
             return UIState.Instance()->WeaponState.IsUnsheathed;
         }
