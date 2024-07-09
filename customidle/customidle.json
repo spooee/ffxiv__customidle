@@ -1,0 +1,12 @@
+{
+    "Author": "spooee",
+    "Name": "Custom Idle",
+    "Punchline": "Performs an emote when you stop moving while sheathed (and unsheathed)",
+    "Description": "Performs an emote when you stop moving while sheathed (and unsheathed)",
+    "InternalName": "customidle",
+    "ApplicableVersion": "any",
+    "Tags": [
+        "emote",
+        "idle"
+    ]
+}
